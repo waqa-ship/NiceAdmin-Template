@@ -90,6 +90,7 @@
                                                 <td>{{ ++$i }}</td>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->detail }}</td>
+                                                
                                                 <td>
                                                     <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                                                         <a class="btn btn-info btn-sm" href="{{ route('users.show', $user->id) }}"><i class="fa-solid fa-list"></i> Show</a>

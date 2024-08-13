@@ -23,65 +23,69 @@
     </div>
 @endif
 
-<form method="POST" action="{{ route('users.store') }}">
-    @csrf
-    <div class="row">
-        <!-- Name and Email side by side -->
-        <div class="col-md-4">
-            <div class="form-group">
-                <strong>Name:</strong>
-                <input type="text" name="name" placeholder="Name" class="form-control">
+<div class="card" style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+    <div class="card-body">
+        <form method="POST" action="{{ route('users.store') }}">
+            @csrf
+            <div class="row">
+                <!-- Name and Email side by side -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <strong>Name:</strong>
+                        <input type="text" name="name" placeholder="Name" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <strong>Email:</strong>
+                        <input type="email" name="email" placeholder="Email" class="form-control"> 
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <strong>Email:</strong>
-                <input type="email" name="email" placeholder="Email" class="form-control"> <br>
-            </div>
-        </div>
-    </div>
 
-    <div class="row">
-        <!-- Password and Confirm Password side by side -->
-        <div class="col-md-4">
-            <div class="form-group">
-                <strong>Password:</strong>
-                <input type="password" name="password" placeholder="Password" class="form-control">
+            <div class="row mt-3">
+                <!-- Password and Confirm Password side by side -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <strong>Password:</strong>
+                        <input type="password" name="password" placeholder="Password" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <strong>Confirm Password:</strong>
+                        <input type="password" name="confirm-password" placeholder="Confirm Password" class="form-control">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <strong>Confirm Password:</strong>
-                <input type="password" name="confirm-password" placeholder="Confirm Password" class="form-control">
-            </div>
-        </div>
-    </div>
 
-    <div class="row">
-        <!-- Role field -->
-        <div class="col-md-4">
-            <div class="form-group">
-                <strong>Role:</strong>
-                <select name="roles[]" class="form-control" multiple="multiple">
-                    @foreach ($roles as $value => $label)
-                        <option value="{{ $value }}">
-                            {{ $label }}
-                        </option>
-                    @endforeach
-                </select>
+            <div class="row mt-3">
+                <!-- Role field -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <strong>Role:</strong>
+                        <select name="roles[]" class="form-control" multiple="multiple">
+                            @foreach ($roles as $value => $label)
+                                <option value="{{ $value }}">
+                                    {{ $label }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="row">
-        <!-- Submit button -->
-        <div class="col-md-12 text-left mt-2">
-            <button type="submit" class="btn btn-primary btn-sm mt-2 mb-3">
-                <i class="fa-solid fa-floppy-disk"></i> Submit
-            </button>
-        </div>
+            <div class="row mt-3">
+                <!-- Submit button -->
+                <div class="col-md-12 text-left">
+                    <button type="submit" class="btn btn-primary btn-sm mt-2 mb-3">
+                        <i class="fa-solid fa-floppy-disk"></i> Submit
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
-</form>
+</div>
 
 
 @endsection
